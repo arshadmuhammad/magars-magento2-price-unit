@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Block\Product\View">
+        <plugin name="addPriceUnit" type="MagArs\PriceUnit\Plugin\Product\View"/>
+    </type>
+    <type name="Magento\Swatches\Block\Product\Renderer\Listing\Configurable">
+        <plugin name="addConfigurablePriceUnit" type="MagArs\PriceUnit\Plugin\Product\Configurable"/>
+    </type>
+    <!--<type name="Magento\Catalog\Block\Product\ListProduct">
+        <plugin name="addSimplePriceUnit" type="MagArs\PriceUnit\Plugin\Product\Simple"/>
+    </type>-->
+    <type name="Magento\Catalog\Block\Product\ListProduct">
+        <plugin name="addSimplePriceUnit" type="MagArs\PriceUnit\Plugin\Product\Simple" />
+    </type>
+    <virtualType name="Magento\CatalogSearch\Block\SearchResult\ListProduct">
+        <plugin name="addSimplePriceUnitVirtualPlugin"
+                type="MagArs\PriceUnit\Plugin\Product\Simple" />
+    </virtualType>
+</config>
