@@ -13,6 +13,9 @@
   ],
   "require": {
   },
+  "require-dev": {
+    "magento/framework": "^101.0.0"
+  },
   "autoload": {
     "files": [
       "registration.php"
