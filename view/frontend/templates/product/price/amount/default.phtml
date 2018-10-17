@@ -40,7 +40,7 @@ $product = $productRepository->getById(end($data));
         data-price-type="<?= /* @escapeNotVerified */ $block->getPriceType() ?>"
         class="price-wrapper <?= /* @escapeNotVerified */ $block->getPriceWrapperCss() ?>"
     >
-        <?php if($product->getData('type_id') == 'simple'): ?>
+        <?php if($product->getData('type_id') == 'simple' || $product->getData('type_id') == 'virtual' || $product->getData('type_id') == 'simple' || $product->getData('type_id') == 'downloadable'  || $product->getData('type_id') == 'giftcard'): ?>
             <?php if((bool)$block->getIncludeContainer()): ?><span class="price"><?php endif; ?><?= /* @escapeNotVerified */ $block->formatCurrency($block->getDisplayValue(), false) ?> <?= $product->getData('price_unit') ?><?php if((bool)$block->getIncludeContainer()): ?></span><?php endif; ?>
         <?php else: ?>
             <?= /* @escapeNotVerified */ $block->formatCurrency($block->getDisplayValue(), (bool)$block->getIncludeContainer()) ?>
